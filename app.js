@@ -49,7 +49,14 @@ function factorial(n) {
 	return seq[seq.length - 1];
 }
 
-function operate(x, y, op) {
+function sqrt(x) {
+    if(x < 0)
+        return "ERROR";
+
+    return sqrt(x);
+}
+
+function operate(x, op, y) {
     if(op === '+')
         return add(x, y);
     
@@ -61,10 +68,13 @@ function operate(x, y, op) {
 
     if(op === '/')
         return divide(x, y);
+
+    if(op === 0x221A)
+        return sqrt(x);
 }
 
 function buildKeyGrid() {
-    let buttonLabels = ['c', 'del', '(-)', String.fromCharCode(0x221A), '7', '8', '9', 
+    let buttonLabels = ['C', 'DEL', '(-)', String.fromCharCode(0x221A), '7', '8', '9', 
                         String.fromCharCode(247), '4', '5', '6', 'x', '1', '2', '3', 
                         '-', '0', '.', '=', '+'];
     let keyGrid = document.getElementById("keyGrid");
@@ -73,7 +83,17 @@ function buildKeyGrid() {
         const keyCell = document.createElement('div');
         keyCell.classList.add('keyCell');
         keyCell.textContent = buttonLabels[i];
-    
+
+        if(i === 18)
+            keyCell.style.setProperty('--rgb', '214, 138, 38');
+        else if(i === 0 ||i === 1 || i === 2)
+            keyCell.style.setProperty('--rgb', '13, 44, 30');
+        else if(i === 3 ||i === 7 || i === 11 || i === 15 || i === 19 || 
+                i === 21 || i === 22 || i === 23)
+            keyCell.style.setProperty('--rgb', '44, 36, 18');
+        else
+            keyCell.style.setProperty('--rgb', '14, 14, 14');
+
         keyGrid.appendChild(keyCell);
     }
 }

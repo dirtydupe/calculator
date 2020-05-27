@@ -1,3 +1,26 @@
+:root {
+    background-color: rgb(31, 25, 25);
+    padding: 80px 0px 0px 0px;
+}
+
+.container {
+    background-color: rgb(53, 53, 53);
+    height: 550px;
+    width: 320px;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 5px 10px 5px #141414 ;
+}
+
+.top {
+    height: 45px;
+    color: whitesmoke;
+    font-family: helvetica;
+    padding: 45px 200px 0px 0px;
+}
+
 #keyGrid {
     display: grid;
     grid-template-rows: repeat(5, 70px);
@@ -6,22 +29,36 @@
     font-family: helvetica;
     font-size: 20px;
     width: 280px;
+    text-align: center;
 }
 
 .keyCell {
-    background-color: rgb(14, 14, 14);
+    background-color: rgb(var(--rgb));
     color: whitesmoke;
     border: transparent;
-    border-radius: 5px;
-    padding: 20px 0px 0px 27px;
+    border-radius: 50%;
+    padding: 20px 0px 0px 0px;
     margin: 3px 3px 3px 3px;
 }
 
+.keyCell:hover {
+    filter: brightness(60%);
+}
+
 .display {
+   /* color: rgb(13, 44, 30)*/
     background-color: gray;
     border: transparent;
     border-radius: 5px;
-    margin: 0px 0px 3px 0px;
+    margin: 0px 0px 10px 0px;
     height: 50px;
-    width: 280px;
+    width: 260px;
+}
+
+#foot {
+    color: whitesmoke;
+    font-family: helvetica;
+    text-align: center;
+    padding: 100px 0px 0px 0px;
+    text-shadow: 5px 10px 5px #141414 ;
 }
