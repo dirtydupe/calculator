@@ -1,12 +1,15 @@
-function add(x, y) {
+function add(x, y) 
+{
 	return x + y;
 }
 
-function subtract(x, y) {
+function subtract(x, y) 
+{
 	return x - y;
 }
 
-function sum(lst) {
+function sum(lst) 
+{
 	let sum = 0;
 
 	for(let i = 0; i < lst.length; i++)
@@ -15,7 +18,8 @@ function sum(lst) {
 	return sum;
 }
 
-function multiply(lst) {
+function multiply(lst) 
+{
 	let product = 1;
 
 	for(let i = 0; i < lst.length; i++)
@@ -24,14 +28,16 @@ function multiply(lst) {
 	return product;
 }
 
-function divide(x, y) {
+function divide(x, y) 
+{
     if(y === 0)
         return "NOPE!";
 
     return x / y;
 }
 
-function power(x, n) {
+function power(x, n) 
+{
 	let product = 1;
 
 	for(let i = 0; i < n; i++)
@@ -40,7 +46,8 @@ function power(x, n) {
 	return product;
 }
 
-function factorial(n) {
+function factorial(n) 
+{
 	let seq = [1];
 
 	for(let i = 1; i < n; i++)
@@ -49,14 +56,16 @@ function factorial(n) {
 	return seq[seq.length - 1];
 }
 
-function sqrt(x) {
+function sqrt(x) 
+{
     if(x < 0)
         return "ERROR";
 
     return sqrt(x);
 }
 
-function operate(x, op, y) {
+function operate(x, op, y) 
+{
     if(op === '+')
         return add(x, y);
     
@@ -73,7 +82,8 @@ function operate(x, op, y) {
         return sqrt(x);
 }
 
-function buildKeyGrid() {
+function buildKeyGrid() 
+{
     let buttonLabels = ['C', 'DEL', '(-)', String.fromCharCode(0x221A), '7', '8', '9', 
                         String.fromCharCode(247), '4', '5', '6', 'x', '1', '2', '3', 
                         '-', '0', '.', '=', '+'];
@@ -86,16 +96,28 @@ function buildKeyGrid() {
 
         if(i === 18)
             keyCell.style.setProperty('--rgb', '214, 138, 38');
+
         else if(i === 0 ||i === 1 || i === 2)
             keyCell.style.setProperty('--rgb', '13, 44, 30');
-        else if(i === 3 ||i === 7 || i === 11 || i === 15 || i === 19 || 
+
+        else if(i === 3 ||i === 7 || i === 11 || i === 15 || i === 17 || i === 19 || 
                 i === 21 || i === 22 || i === 23)
             keyCell.style.setProperty('--rgb', '44, 36, 18');
+            
         else
             keyCell.style.setProperty('--rgb', '14, 14, 14');
 
+        keyCell.addEventListener('click', () => {
+            display
+        });
+
         keyGrid.appendChild(keyCell);
     }
+}
+
+function display()
+{
+    // TODO
 }
 
 buildKeyGrid();
